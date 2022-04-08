@@ -1,1 +1,1 @@
-# Lab_Cpp
+# Solving Quadratic Equations
