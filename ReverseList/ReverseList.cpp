@@ -5,7 +5,7 @@ Node* List::AddNode(int value, Node* a = nullptr)
 	Node* elem = new Node();
 	elem->_data = value;
 	_count++;
-	if (a == NULL) 
+	if (a == NULL)
 	{
 		if (_head == NULL) {
 			elem->next = NULL;
@@ -17,7 +17,7 @@ Node* List::AddNode(int value, Node* a = nullptr)
 		}
 		return elem;
 	}
-	elem->next = a->next; 
+	elem->next = a->next;
 	a->next = elem;
 	return elem;
 }
@@ -28,7 +28,7 @@ Node* List::AddNode(int value)
 	Node* elem = new Node();
 	elem->_data = value;
 	_count++;
-	if (a == NULL) 
+	if (a == NULL)
 	{
 		if (_head == NULL) {
 			elem->next = NULL;
@@ -40,22 +40,22 @@ Node* List::AddNode(int value)
 		}
 		return elem;
 	}
-	elem->next = a->next; 
+	elem->next = a->next;
 	a->next = elem;
 	return elem;
 }
 
 Node* List::DelNode(Node* a)
 {
-	if (a == NULL) { return NULL; } 
+	if (a == NULL) { return NULL; }
 	_count--;
-	if (a == _head)  
+	if (a == _head)
 	{
 		_head = a->next;
 		delete a;
 		return _head;
 	}
-	Node* prev = PrevNode(a); 
+	Node* prev = PrevNode(a);
 	prev->next = a->next;
 	delete a;
 	return prev;
@@ -112,9 +112,9 @@ void List::Print()
 
 void List::Swap(Node* a, Node* b)
 {
-	if (a == NULL || b == NULL) return; 
-	if (a == b) return; 
-	if (b->next == a) 
+	if (a == NULL || b == NULL) return;
+	if (a == b) return;
+	if (b->next == a)
 	{
 		Node* p = a;
 		a = b;
@@ -124,7 +124,7 @@ void List::Swap(Node* a, Node* b)
 	Node* prev2 = PrevNode(b);
 	Node* next1 = NextNode(a);
 	Node* next2 = NextNode(b);
-	if (next1 == b) 
+	if (next1 == b)
 	{
 		if (prev1 != NULL)
 			prev1->next = b;
@@ -134,7 +134,7 @@ void List::Swap(Node* a, Node* b)
 		a->next = next2;
 		return;
 	}
-	if (prev1 != NULL)  
+	if (prev1 != NULL)
 		prev1->next = b;
 	else
 		_head = b;
@@ -154,26 +154,10 @@ void List::ReverseList()
 	Node* a = nullptr;
 	Node* b = nullptr;
 	Node* tmp;
-	//int counter = 0;
 	int counter = 0.5 * _count;
 	while (counter)
 	{
 		Swap(first, last);
-		//tmp = first;
-		//first = last;
-		//last = tmp;
-		/*if (counter % 2 == 1)
-		{
-			tmp = first;
-			first = NextNode(last);
-			last = PrevNode(tmp);
-		}
-		if ((counter != 0) && (counter % 2 == 0))
-		{
-			tmp;
-			first = NextNode();
-			last = PrevNode();
-		}*/
 		tmp = first;
 		first = NextNode(last);
 		last = PrevNode(tmp);

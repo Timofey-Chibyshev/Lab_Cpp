@@ -2,9 +2,6 @@
 
 int main(void)
 {
-	//Node* head = nullptr;
-	system("chcp 1251");
-	system("cls");
 	List list;
 	list.Print();
 	for (int i = 0; i < 10; i++)
@@ -38,6 +35,5 @@ int main(void)
 	list.Print();
 	cout << endl;
 	cout << "There are " << list.GetCount() << " elements in the list" << endl;
-	//cin.get(); 
 	return 0;
 }
