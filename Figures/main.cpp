@@ -1,15 +1,18 @@
-#include "Figures.h"
-#include <iostream>
+#include "Square.h"
+#include "Rectangle.h"
 
-using namespace std;
+int main()
+{
+	Square s(5.0);
+	std::cout << std::endl;
+	std::cout << s.GetName() << " area = " << s.GetArea() << std::endl;
+	s.DrawGraphic();
+	s.DrawText();
 
-int main(int argc, char* argv[]) {
-    rect r(2, 3);
-    r.cdraw();
-    r.draw();
-    cout << endl;
-    square sq(4);
-    sq.cdraw();
-    sq.draw();
-    return 0;
+	Rectangle r(5.0, 4.0);
+	std::cout << std::endl;
+	std::cout << r.GetName() << " area = " << r.GetArea() << std::endl;
+	r.DrawGraphic();
+	r.DrawText();
+	return 0;
 }

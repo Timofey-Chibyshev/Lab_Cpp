@@ -1,30 +1,14 @@
-#ifndef FIGURES_H_
-#define FIGURES_H_
+#pragma once
 
-class figure {
+#include <iostream>
+#include <string>
+
+class Figure // абстрактный  класс (интерфейс) для всех наследуемых фигур («Квадрат», «Прямоугольник»)
+{
 public:
-    figure() = default;
-    virtual void draw() const = 0;
-    virtual void cdraw() const = 0;
-    virtual int area() const = 0;
-    virtual ~figure() = default;
+    virtual void DrawGraphic(void) const = 0;
+    virtual void DrawText(void) const = 0;
+    virtual std::string GetName() const = 0;
+    virtual double GetArea() const = 0;
+    virtual ~Figure() {};
 };
-
-class rect : public figure {
-public:
-    rect(int h, int w) : figure(), _h(h), _w(w) {}
-    void draw() const override;
-    void cdraw() const override;
-    int area() const override;
-
-private:
-    int _h;
-    int _w;
-};
-
-class square : public rect {
-public:
-    square(int a) : rect(a, a) {}
-};
-
-#endif
