@@ -1,5 +1,5 @@
 # Lab_Cpp
 
-##Students Assesment
+Students Assesment
 
-###The first big homework assignment!!!
+The first big homework assignment!!!
